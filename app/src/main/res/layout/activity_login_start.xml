@@ -63,6 +63,17 @@
         app:layout_constraintTop_toBottomOf="@id/edit_password"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_teste"
+        android:text="@string/teste"
+        style="@style/button_teste"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar"
+
+
+        />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:visibility="invisible"
