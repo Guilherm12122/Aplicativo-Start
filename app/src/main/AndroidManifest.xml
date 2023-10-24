@@ -13,7 +13,15 @@
         android:theme="@style/Theme.App_start"
         tools:targetApi="31">
         <activity
+            android:name=".HomePage"
+            android:exported="false"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.App_start.NoActionBar" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginStart"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
