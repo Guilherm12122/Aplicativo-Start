@@ -4,6 +4,10 @@
     <string name="nome">Nome</string>
     <string name="senha">Senha</string>
     <string name="teste">Teste</string>
+    <string name="consulta_funcionario">Consultar funcionário</string>
+    <string name="adiciona_funcionario">Cadastrar funcionário</string>
+    <string name="editar_funcionario">Editar funcionário</string>
+    <string name="excluir_funcionario">Remover funcionário</string>
     <string name="title_activity_home_page">home_page</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
