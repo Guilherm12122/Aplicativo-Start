@@ -13,6 +13,11 @@
         android:theme="@style/Theme.App_start"
         tools:targetApi="31">
         <activity
+            android:name=".ConsultaFuncionario"
+            android:exported="false"
+            android:label="@string/title_activity_consultar_funcionario"
+            android:theme="@style/Theme.App_start.NoActionBar" />
+        <activity
             android:name=".HomePage"
             android:exported="false"
             android:label="@string/title_activity_home_page"
