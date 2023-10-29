@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProdutoActivity">
+        tools:context=".ui.produto.ProductFragment">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_consultar_produto"
