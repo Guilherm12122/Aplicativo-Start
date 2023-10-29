@@ -12,15 +12,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.app_start.ConsultaFuncionario;
+import com.example.app_start.CriarFuncionario;
+import com.example.app_start.EditarFuncionario;
 import com.example.app_start.HomePage;
 import com.example.app_start.LoginStart;
 import com.example.app_start.R;
+import com.example.app_start.RemoverFuncionario;
 import com.example.app_start.databinding.FragmentFuncionarioBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 public class FuncionarioFragment extends Fragment implements View.OnClickListener {
-
-    private FragmentFuncionarioBinding binding = null;
 
     private Button button_consultar;
     private Button button_criar;
@@ -41,18 +42,22 @@ public class FuncionarioFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+
         if (v.getId() == R.id.btn_consultar_funcionario){
             Intent intent = new Intent(getActivity(), ConsultaFuncionario.class);
             startActivity(intent);
         }
         else if (v.getId() == R.id.btn_adicionar_funcionario) {
-
+            Intent intent = new Intent(getActivity(), CriarFuncionario.class);
+            startActivity(intent);
         }
         else if (v.getId() == R.id.btn_remover_funcionario) {
-
+            Intent intent = new Intent(getActivity(), RemoverFuncionario.class);
+            startActivity(intent);
         }
         else if (v.getId() == R.id.btn_editar_funcionario) {
-
+            Intent intent = new Intent(getActivity(), EditarFuncionario.class);
+            startActivity(intent);
         }
     }
 

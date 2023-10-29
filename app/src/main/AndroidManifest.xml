@@ -13,6 +13,27 @@
         android:theme="@style/Theme.App_start"
         tools:targetApi="31">
         <activity
+            android:name=".RemoverProduto"
+            android:exported="false" />
+        <activity
+            android:name=".EditarProduto"
+            android:exported="false" />
+        <activity
+            android:name=".CriarProduto"
+            android:exported="false" />
+        <activity
+            android:name=".ConsultarProduto"
+            android:exported="false" />
+        <activity
+            android:name=".EditarFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".RemoverFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".CriarFuncionario"
+            android:exported="false" />
+        <activity
             android:name=".ConsultaFuncionario"
             android:exported="false"
             android:label="@string/title_activity_consultar_funcionario"
