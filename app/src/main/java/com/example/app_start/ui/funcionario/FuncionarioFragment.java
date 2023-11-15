@@ -1,7 +1,6 @@
 package com.example.app_start.ui.funcionario;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,15 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.app_start.ConsultaFuncionario;
-import com.example.app_start.CriarFuncionario;
-import com.example.app_start.EditarFuncionario;
-import com.example.app_start.HomePage;
-import com.example.app_start.LoginStart;
+import com.example.app_start.ui.funcionario.Operations.ConsultaFuncionario;
+import com.example.app_start.ui.funcionario.Operations.CriarFuncionario;
+import com.example.app_start.ui.funcionario.Operations.EditarFuncionario;
 import com.example.app_start.R;
-import com.example.app_start.RemoverFuncionario;
-import com.example.app_start.databinding.FragmentFuncionarioBinding;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.app_start.ui.funcionario.Operations.RemoverFuncionario;
 
 public class FuncionarioFragment extends Fragment implements View.OnClickListener {
 

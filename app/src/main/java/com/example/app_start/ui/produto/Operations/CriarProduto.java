@@ -1,18 +1,20 @@
-package com.example.app_start;
+package com.example.app_start.ui.produto.Operations;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class ConsultaFuncionario extends AppCompatActivity {
+import com.example.app_start.R;
+
+public class CriarProduto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consultar_funcionario);
+        setContentView(R.layout.activity_criar_produto);
 
-        Toolbar mytoolBar = findViewById(R.id.my_tool_bar);
+        Toolbar mytoolBar = findViewById(R.id.my_tool_bar_criar_produto);
         setSupportActionBar(mytoolBar);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.app_start;
+package com.example.app_start.ui.funcionario.Operations;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.app_start.DB.DBHelper;
+import com.example.app_start.R;
 import com.google.android.material.snackbar.Snackbar;
 
 public class CriarFuncionario extends AppCompatActivity {
