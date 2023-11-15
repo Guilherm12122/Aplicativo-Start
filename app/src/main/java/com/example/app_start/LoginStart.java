@@ -17,8 +17,10 @@ public class LoginStart extends AppCompatActivity {
     private EditText password;
     private Button btn_teste;
     private Button btn;
+    private Intent intent;
+    private DBHelper db;
 
-    String[] msg = {"Preencha todos os campos"};
+    String[] msg = {"Preencha todos os campos", "Usuário não encontrado."};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,18 @@ public class LoginStart extends AppCompatActivity {
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
+                } else {
+                    Boolean check = db.checkUser(name_typed, pass_typed);
+
+                    if (check) {
+                        startActivity(intent);
+                    } else {
+                        Snackbar snackbar = Snackbar.make(view, msg[1], Snackbar.LENGTH_SHORT);
+                        snackbar.setBackgroundTint(Color.WHITE);
+                        snackbar.setTextColor(Color.BLACK);
+                        snackbar.show();
+                    }
+
                 }
 
             }
@@ -46,8 +60,6 @@ public class LoginStart extends AppCompatActivity {
         btn_teste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(LoginStart.this, HomePage.class);
                 startActivity(intent);
             }
         });
@@ -58,5 +70,7 @@ public class LoginStart extends AppCompatActivity {
         password = findViewById(R.id.edit_password);
         btn_teste = findViewById(R.id.btn_teste);
         btn =  findViewById(R.id.btn);
+        intent = new Intent(LoginStart.this, HomePage.class);
+        db = new DBHelper(this);
     }
 }

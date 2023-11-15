@@ -7,12 +7,60 @@
     tools:context=".CriarFuncionario">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/nome_usuario"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Digite o nome"
+        android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/my_tool_bar_criar"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="50sp"
-        android:text="Criação de funcionário"/>
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/cargo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Digite o cargo"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/nome_usuario"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Digite a senha"
+        android:inputType="numberPassword"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@id/cargo"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_realizar_cadastro"
+        android:text="Realizar cadastro"
+        style="@style/button_entrar"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/senha"
+        tools:ignore="MissingConstraints" />
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_tool_bar_criar"
