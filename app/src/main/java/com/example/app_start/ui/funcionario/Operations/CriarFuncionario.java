@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.example.app_start.DB.DBHelper;
 import com.example.app_start.R;
+import com.example.app_start.others.MsgSnackBar;
 import com.google.android.material.snackbar.Snackbar;
 
 public class CriarFuncionario extends AppCompatActivity {
@@ -20,7 +21,14 @@ public class CriarFuncionario extends AppCompatActivity {
     EditText senha;
     Button cadastrar;
 
+    MsgSnackBar msgSnackBar;
+
+    Snackbar snackbar;
+
     DBHelper db;
+
+    String[] msg = {"Todos os campos devem ser preenchidos.", "Funcionário incluso com sucesso.", "Erro ao inserir funcionário..",
+            "Já existe funcionário com esse nome."};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +46,7 @@ public class CriarFuncionario extends AppCompatActivity {
                 String senha_user = senha.getText().toString();
 
                 if(nome_user.isEmpty() || cargo_user.isEmpty() || senha_user.isEmpty()){
-                    Snackbar snackbar = Snackbar.make(view, "Todos os campos devem ser preenchidos.", Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    msgSnackBar.ShowMsg(view, msg[0]);
                 } else {
                     Boolean check_username = db.checkUserName(nome_user);
 
@@ -49,22 +54,13 @@ public class CriarFuncionario extends AppCompatActivity {
                         Boolean insert_status = db.insertData(nome_user, senha_user, cargo_user);
 
                         if (insert_status){
-                            Snackbar snackbar = Snackbar.make(view, "Funcionário incluso com sucesso.", Snackbar.LENGTH_SHORT);
-                            snackbar.setBackgroundTint(Color.WHITE);
-                            snackbar.setTextColor(Color.BLACK);
-                            snackbar.show();
+                            msgSnackBar.ShowMsg(view, msg[1]);
                         } else {
-                            Snackbar snackbar = Snackbar.make(view, "Erro ao inserir funcionário..", Snackbar.LENGTH_SHORT);
-                            snackbar.setBackgroundTint(Color.WHITE);
-                            snackbar.setTextColor(Color.BLACK);
-                            snackbar.show();
+                            msgSnackBar.ShowMsg(view, msg[2]);
                         }
 
                     } else {
-                        Snackbar snackbar = Snackbar.make(view, "Já existe funcionário com esse nome.", Snackbar.LENGTH_SHORT);
-                        snackbar.setBackgroundTint(Color.WHITE);
-                        snackbar.setTextColor(Color.BLACK);
-                        snackbar.show();
+                        msgSnackBar.ShowMsg(view, msg[3]);
                     }
 
 
@@ -85,5 +81,6 @@ public class CriarFuncionario extends AppCompatActivity {
         cadastrar =  findViewById(R.id.btn_realizar_cadastro);
         cargo = findViewById(R.id.cargo);
         db = new DBHelper(this);
+        msgSnackBar = new MsgSnackBar(snackbar);
     }
 }
