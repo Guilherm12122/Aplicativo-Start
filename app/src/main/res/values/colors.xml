@@ -5,4 +5,5 @@
     <color name="dark_purple">#9f19d7</color>
     <color name="medium_purple">#a933dc</color>
     <color name="bright_purple">#b44de0</color>
+    <color name="red_out">#ff0000</color>
 </resources>
