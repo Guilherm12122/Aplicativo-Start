@@ -1,9 +1,9 @@
 package com.example.app_start.ui.funcionario.Operations;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import com.example.app_start.DB.DBHelper;
 import com.example.app_start.R;
-import com.example.app_start.others.MsgSnackBar;
+import com.example.app_start.others.AlertMsg;
 import com.google.android.material.snackbar.Snackbar;
 
 public class CriarFuncionario extends AppCompatActivity {
@@ -21,11 +21,10 @@ public class CriarFuncionario extends AppCompatActivity {
     EditText senha;
     Button cadastrar;
 
-    MsgSnackBar msgSnackBar;
-
     Snackbar snackbar;
 
     DBHelper db;
+    private AlertMsg alertMsg;
 
     String[] msg = {"Todos os campos devem ser preenchidos.", "Funcionário incluso com sucesso.", "Erro ao inserir funcionário..",
             "Já existe funcionário com esse nome."};
@@ -36,6 +35,7 @@ public class CriarFuncionario extends AppCompatActivity {
         setContentView(R.layout.activity_criar_funcionario);
 
         IniciarComponentes();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class CriarFuncionario extends AppCompatActivity {
                 String senha_user = senha.getText().toString();
 
                 if(nome_user.isEmpty() || cargo_user.isEmpty() || senha_user.isEmpty()){
-                    msgSnackBar.ShowMsg(view, msg[0]);
+                    alertMsg.ShowMsg(alertDialog, msg[0]);
                 } else {
                     Boolean check_username = db.checkUserName(nome_user);
 
@@ -54,13 +54,13 @@ public class CriarFuncionario extends AppCompatActivity {
                         Boolean insert_status = db.insertData(nome_user, senha_user, cargo_user);
 
                         if (insert_status){
-                            msgSnackBar.ShowMsg(view, msg[1]);
+                            alertMsg.ShowMsg(alertDialog, msg[1]);
                         } else {
-                            msgSnackBar.ShowMsg(view, msg[2]);
+                            alertMsg.ShowMsg(alertDialog, msg[2]);
                         }
 
                     } else {
-                        msgSnackBar.ShowMsg(view, msg[3]);
+                        alertMsg.ShowMsg(alertDialog, msg[3]);
                     }
 
 
@@ -81,6 +81,6 @@ public class CriarFuncionario extends AppCompatActivity {
         cadastrar =  findViewById(R.id.btn_realizar_cadastro);
         cargo = findViewById(R.id.cargo);
         db = new DBHelper(this);
-        msgSnackBar = new MsgSnackBar(snackbar);
+        alertMsg = new AlertMsg();
     }
 }
