@@ -4,51 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CriarFuncionario">
+    tools:context=".ui.funcionario.Operations.CriarFuncionario">
 
     <EditText
         android:id="@+id/nome_usuario"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        style="@style/Edit_Text"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Digite o nome"
-        android:textColor="#000"
+        android:hint="@string/nome"
         app:layout_constraintTop_toBottomOf="@id/my_tool_bar_criar"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/cargo"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:gravity="center"
         android:hint="Digite o cargo"
-        android:textColor="#000"
+        android:inputType="text"
+        style="@style/Edit_Text"
         app:layout_constraintTop_toBottomOf="@id/nome_usuario"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/senha"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:gravity="center"
         android:hint="Digite a senha"
+        style="@style/Edit_Text"
         android:inputType="numberPassword"
-        android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/cargo"
         tools:ignore="MissingConstraints" />
 
@@ -68,6 +47,7 @@
         android:layout_width="match_parent"
         app:title="Criar funcionário"
         app:titleTextColor="@color/white"
+        app:subtitleTextAppearance="@style/titulo_cadastrar_funcionario"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/bright_purple"
         android:elevation="4dp"

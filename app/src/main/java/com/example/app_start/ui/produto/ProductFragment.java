@@ -10,16 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.app_start.ConsultaFuncionario;
-import com.example.app_start.ConsultarProduto;
-import com.example.app_start.CriarFuncionario;
-import com.example.app_start.CriarProduto;
-import com.example.app_start.EditarFuncionario;
-import com.example.app_start.EditarProduto;
+import com.example.app_start.ui.produto.Operations.ConsultarProduto;
+import com.example.app_start.ui.produto.Operations.CriarProduto;
+import com.example.app_start.ui.produto.Operations.EditarProduto;
 import com.example.app_start.R;
-import com.example.app_start.RemoverFuncionario;
-import com.example.app_start.RemoverProduto;
-import com.example.app_start.databinding.FragmentProductBinding;
+import com.example.app_start.ui.produto.Operations.RemoverProduto;
 
 public class ProductFragment extends Fragment implements View.OnClickListener {
 

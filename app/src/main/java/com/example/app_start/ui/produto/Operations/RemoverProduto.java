@@ -1,9 +1,11 @@
-package com.example.app_start;
+package com.example.app_start.ui.produto.Operations;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+
+import com.example.app_start.R;
 
 public class RemoverProduto extends AppCompatActivity {
 

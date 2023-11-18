@@ -1,15 +1,16 @@
 package com.example.app_start;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.app_start.DB.DBHelper;
+import com.example.app_start.others.AlertMsg;
 
 public class LoginStart extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class LoginStart extends AppCompatActivity {
     private Button btn;
     private Intent intent;
     private DBHelper db;
-
+    private AlertMsg alertMsg;
     String[] msg = {"Preencha todos os campos", "Usuário não encontrado."};
 
     @Override
@@ -28,6 +29,7 @@ public class LoginStart extends AppCompatActivity {
         setContentView(R.layout.activity_login_start);
 
         IniciarComponentes();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,20 +38,14 @@ public class LoginStart extends AppCompatActivity {
                 String pass_typed = password.getText().toString();
 
                 if(name_typed.isEmpty() || pass_typed.isEmpty()){
-                    Snackbar snackbar = Snackbar.make(view, msg[0], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    alertMsg.ShowMsg(alertDialog, msg[0]);
                 } else {
                     Boolean check = db.checkUser(name_typed, pass_typed);
 
                     if (check) {
                         startActivity(intent);
                     } else {
-                        Snackbar snackbar = Snackbar.make(view, msg[1], Snackbar.LENGTH_SHORT);
-                        snackbar.setBackgroundTint(Color.WHITE);
-                        snackbar.setTextColor(Color.BLACK);
-                        snackbar.show();
+                        alertMsg.ShowMsg(alertDialog, msg[1]);
                     }
 
                 }
@@ -72,5 +68,6 @@ public class LoginStart extends AppCompatActivity {
         btn =  findViewById(R.id.btn);
         intent = new Intent(LoginStart.this, HomePage.class);
         db = new DBHelper(this);
+        alertMsg = new AlertMsg();
     }
 }

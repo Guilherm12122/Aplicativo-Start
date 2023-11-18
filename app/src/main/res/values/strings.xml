@@ -12,6 +12,8 @@
     <string name="adiciona_produto">Cadastrar produto</string>
     <string name="editar_produto">Editar produto</string>
     <string name="excluir_produto">Remover produto</string>
+    <string name="sair">Sair</string>
+
     <string name="title_activity_home_page">home_page</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
