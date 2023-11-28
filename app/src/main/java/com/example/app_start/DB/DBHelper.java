@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.app_start.ui.funcionario.model.FuncionarioModel;
+
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "Start.db";
@@ -77,5 +81,25 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
 
+    }
+
+    public ArrayList<FuncionarioModel> readFuncionario(){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("select * from funcionario", null);
+
+        ArrayList<FuncionarioModel> funcionarioModels = new ArrayList<>();
+
+        if (cursor.moveToFirst()){
+            do {
+                funcionarioModels.add(
+                        new FuncionarioModel(cursor.getString(1),
+                                             cursor.getString(2))
+                );
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return  funcionarioModels;
     }
 }
