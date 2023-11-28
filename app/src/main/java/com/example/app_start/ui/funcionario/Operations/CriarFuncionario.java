@@ -21,12 +21,10 @@ public class CriarFuncionario extends AppCompatActivity {
     EditText senha;
     Button cadastrar;
 
-    Snackbar snackbar;
-
     DBHelper db;
     private AlertMsg alertMsg;
 
-    String[] msg = {"Todos os campos devem ser preenchidos.", "Funcionário incluso com sucesso.", "Erro ao inserir funcionário..",
+    String[] msg = {"Todos os campos devem ser preenchidos.", "Funcionário incluso com sucesso.", "Erro ao inserir funcionário...",
             "Já existe funcionário com esse nome."};
 
     @Override

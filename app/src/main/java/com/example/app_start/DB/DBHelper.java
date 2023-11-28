@@ -24,12 +24,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create table validacao(id_usuario integer primary key autoincrement, nome_usuario TEXT, senha TEXT)");
         MyDB.execSQL("create table funcionario( id_funcionario integer primary key autoincrement, nome text, cargo text)");
+        MyDB.execSQL("create table produto( id_produto integer primary key autoincrement, nome_produto text, preco decimal(15, 2))");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("DROP TABLE IF EXISTS validacao");
         MyDB.execSQL("DROP TABLE IF EXISTS funcionario");
+        MyDB.execSQL("DROP TABLE IF EXISTS produto");
+
     }
 
 
@@ -51,6 +55,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         if (result1 == -1 || result2 == -1){
+            return false;
+        } else{
+            return true;
+        }
+    }
+
+    public Boolean insertDataProduto(String nome_produto, Float preco){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("nome_produto", nome_produto);
+        contentValues.put("preco", preco);
+
+        long result = MyDB.insert("produto", null, contentValues);
+
+        if (result == -1){
             return false;
         } else{
             return true;

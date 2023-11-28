@@ -45,7 +45,7 @@
         android:id="@+id/my_tool_bar_criar"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        app:title="Criar funcionário"
+        app:title="Cadastrar funcionário"
         app:titleTextColor="@color/white"
         app:subtitleTextAppearance="@style/titulo_cadastrar_funcionario"
         android:layout_height="?attr/actionBarSize"
