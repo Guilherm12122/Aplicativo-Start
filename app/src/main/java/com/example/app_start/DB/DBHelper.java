@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.app_start.ui.funcionario.model.FuncionarioModel;
+import com.example.app_start.ui.produto.model.ProdutoModel;
 
 import java.util.ArrayList;
 
@@ -122,5 +123,25 @@ public class DBHelper extends SQLiteOpenHelper {
 
         cursor.close();
         return  funcionarioModels;
+    }
+
+    public ArrayList<ProdutoModel> readProduto(){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("select * from produto", null);
+
+        ArrayList<ProdutoModel> produtoModels = new ArrayList<>();
+
+        if (cursor.moveToFirst()){
+            do {
+                produtoModels.add(
+                        new ProdutoModel(cursor.getString(1),
+                                cursor.getFloat(2))
+                );
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return  produtoModels;
     }
 }
