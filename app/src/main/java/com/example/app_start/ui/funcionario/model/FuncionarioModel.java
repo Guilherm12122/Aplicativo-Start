@@ -5,7 +5,8 @@ public class FuncionarioModel {
     private String nome_usuario;
     private String cargo;
 
-    public FuncionarioModel(String nome_usuario, String cargo) {
+    public FuncionarioModel(String nome_usuario, String cargo, Integer id_usuario) {
+        this.id_usuario = id_usuario;
         this.nome_usuario = nome_usuario;
         this.cargo = cargo;
     }

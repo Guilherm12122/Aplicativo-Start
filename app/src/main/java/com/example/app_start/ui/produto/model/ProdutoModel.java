@@ -6,9 +6,10 @@ public class ProdutoModel {
     private String nome_produto;
     private Float preco;
 
-    public ProdutoModel(String nome_produto, Float preco) {
+    public ProdutoModel(String nome_produto, Float preco, Integer id_produto) {
         this.nome_produto = nome_produto;
         this.preco = preco;
+        this.id_produto = id_produto;
     }
 
     public Integer getId_produto() {

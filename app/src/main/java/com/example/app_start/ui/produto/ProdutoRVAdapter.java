@@ -36,8 +36,9 @@ public class ProdutoRVAdapter extends RecyclerView.Adapter<ProdutoRVAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ProdutoRVAdapter.ViewHolder holder, int position) {
         ProdutoModel produtoModel = produtoModelArrayList.get(position);
-        holder.nome_produto.setText(produtoModel.getNome_produto());
-        holder.preco.setText(produtoModel.getPreco().toString());
+        holder.nome_produto.setText("Nome: " + produtoModel.getNome_produto());
+        holder.preco.setText("Preço: " + "R$" + produtoModel.getPreco().toString());
+        holder.codigo_produto.setText("Código do produto: " + produtoModel.getId_produto().toString());
 
     }
 
@@ -49,11 +50,13 @@ public class ProdutoRVAdapter extends RecyclerView.Adapter<ProdutoRVAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView nome_produto;
         private TextView preco;
+        private TextView codigo_produto;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             nome_produto = itemView.findViewById(R.id.idProdutoNome);
             preco = itemView.findViewById(R.id.idProdutoPreco);
+            codigo_produto = itemView.findViewById(R.id.idCodigoProduto);
         }
 
     }

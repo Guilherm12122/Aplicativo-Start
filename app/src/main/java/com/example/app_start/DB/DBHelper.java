@@ -115,8 +115,8 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 funcionarioModels.add(
-                        new FuncionarioModel(cursor.getString(1),
-                                             cursor.getString(2))
+                        new FuncionarioModel(cursor.getString(1), cursor.getString(2),
+                                             Integer.parseInt(cursor.getString(0)))
                 );
             } while (cursor.moveToNext());
         }
@@ -135,8 +135,8 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 produtoModels.add(
-                        new ProdutoModel(cursor.getString(1),
-                                cursor.getFloat(2))
+                        new ProdutoModel(cursor.getString(1), cursor.getFloat(2),
+                                Integer.parseInt(cursor.getString(0)))
                 );
             } while (cursor.moveToNext());
         }

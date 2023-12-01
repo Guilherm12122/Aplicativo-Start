@@ -24,6 +24,24 @@
             android:textColor="@color/black" />
 
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!--text view for our course tracks-->
+        <TextView
+            android:id="@+id/idProdutoPreco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="Preco do Produto"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -31,12 +49,12 @@
 
             <!--text view for our course tracks-->
             <TextView
-                android:id="@+id/idProdutoPreco"
+                android:id="@+id/idCodigoProduto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="3dp"
-                android:text="Preco do Produto"
+                android:text="Código do Produto"
                 android:textColor="@color/black" />
 
         </LinearLayout>
