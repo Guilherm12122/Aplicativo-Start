@@ -42,6 +42,9 @@ public class ConsultarProduto extends AppCompatActivity {
         produtoRV.setLayoutManager(linearLayoutManager);
 
         produtoRV.setAdapter(produtoRVAdapter);
+
+        Toolbar mytoolBar = findViewById(R.id.my_tool_bar_consultar_produto);
+        setSupportActionBar(mytoolBar);
     }
 
     public void IniciarComponentes(){

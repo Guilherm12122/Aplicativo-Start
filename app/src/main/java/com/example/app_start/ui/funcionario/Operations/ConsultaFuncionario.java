@@ -40,6 +40,9 @@ public class ConsultaFuncionario extends AppCompatActivity {
         funcionarioRV.setLayoutManager(linearLayoutManager);
 
         funcionarioRV.setAdapter(funcionarioRVAdapter);
+
+        Toolbar mytoolBar = findViewById(R.id.my_tool_bar_consultar_funcionario);
+        setSupportActionBar(mytoolBar);
     }
 
     public void IniciarComponentes(){
