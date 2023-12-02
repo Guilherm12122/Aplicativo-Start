@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.produto.Operations.RemoverProduto">
 
+
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/codigo_remover_produto"
+        android:hint="Digite o código do produto"
+        style="@style/Edit_Text"
+        android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@id/my_tool_bar_remover_produto"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="50sp"
-        android:text="Remoção de produtos"/>
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_realizar_exclusão_produto"
+        android:text="excluir"
+        style="@style/button_log_out"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/codigo_remover_produto"
+        tools:ignore="MissingConstraints" />
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_tool_bar_remover_produto"
@@ -20,6 +32,7 @@
         android:layout_width="match_parent"
         app:title="Remover produto"
         app:titleTextColor="@color/white"
+        app:subtitleTextAppearance="@style/titulo_cadastrar_funcionario"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/bright_purple"
         android:elevation="4dp"

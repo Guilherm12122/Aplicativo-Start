@@ -62,6 +62,30 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public Boolean checkUserId(Integer id_usuario){
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM funcionario WHERE id_funcionario = ?", new String[]{id_usuario.toString()});
+
+        if (cursor.getCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean checkProductId(Integer id_produto){
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM produto WHERE id_produto = ?", new String[]{id_produto.toString()});
+
+        if (cursor.getCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public Boolean insertDataProduto(String nome_produto, Float preco){
         SQLiteDatabase MyDB = this.getWritableDatabase();
 
@@ -101,6 +125,40 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         } else {
             return false;
+        }
+
+    }
+
+    public Boolean RemoveProduto(Integer id_produto){
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("id_produto", id_produto);
+
+        long result = MyDB.delete("produto", "id_produto" + "=" + id_produto, null);
+
+        if (result == -1){
+            return false;
+        } else{
+            return true;
+        }
+    }
+
+    public Boolean RemoveFuncionario(Integer id_funcionario){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("id_funcionario", id_funcionario);
+
+        long result = db.delete("funcionario", "id_funcionario" + "=" + id_funcionario, null);
+
+        if (result == -1){
+            return false;
+        } else{
+            return true;
         }
 
     }

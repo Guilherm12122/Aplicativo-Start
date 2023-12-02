@@ -6,20 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.funcionario.Operations.RemoverFuncionario">
 
+
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/my_tool_bar_remover"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="50sp"
-        android:text="Remoção de funcionário"/>
+        android:id="@+id/codigo_remover"
+        android:hint="Digite o código do funcionário"
+        style="@style/Edit_Text"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/my_tool_bar_deletar"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_realizar_exclusão"
+        android:text="excluir"
+        style="@style/button_log_out"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/codigo_remover"
+        tools:ignore="MissingConstraints" />
+
+
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_tool_bar_remover"
+        android:id="@+id/my_tool_bar_deletar"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         app:title="Remover funcionário"
         app:titleTextColor="@color/white"
+        app:subtitleTextAppearance="@style/titulo_cadastrar_funcionario"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/bright_purple"
         android:elevation="4dp"
