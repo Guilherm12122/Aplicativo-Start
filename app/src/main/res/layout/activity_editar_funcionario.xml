@@ -7,12 +7,53 @@
     tools:context=".ui.funcionario.Operations.EditarFuncionario">
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/codigo_editar_funcionario"
+        android:hint="Digite o código do funcionário"
+        style="@style/Edit_Text"
+        android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@id/my_tool_bar_editar"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nome_editar_funcionario"
+        android:hint="Digite o nome do funcionário"
+        style="@style/Edit_Text"
+        app:layout_constraintTop_toBottomOf="@id/codigo_editar_funcionario"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/cargo_editar_funcionario"
+        android:hint="Digite o cargo do funcionário"
+        style="@style/Edit_Text"
+        app:layout_constraintTop_toBottomOf="@id/nome_editar_funcionario"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_consultar_funcionario_edicao"
+        style="@style/button_consulta_produto"
+        android:layout_marginTop="40dp"
+        android:text="CONSULTAR"
+        android:layout_width="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="50sp"
-        android:text="Atualização de funcionário"/>
+        app:layout_constraintTop_toBottomOf="@+id/cargo_editar_funcionario"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_atualizar_funcionario"
+        style="@style/button_consulta_produto"
+        android:layout_marginTop="30dp"
+        android:text="ATUALIZAR"
+        android:layout_width="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consultar_funcionario_edicao"
+        />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_tool_bar_editar"
