@@ -37,6 +37,44 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public Cursor selectFuncionarioById(int id_funcionario){
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+        Cursor cursor;
+        String[] campos = { "id_funcionario", "nome", "cargo" };
+        String where = "id_funcionario=" + id_funcionario;
+        cursor = MyDB.query("funcionario", campos, where, null, null, null,
+                null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        MyDB.close();
+        return cursor;
+    }
+
+    public Boolean updateFuncionario(Integer id_funcionario, String nome_funcionario, String cargo){
+
+        boolean status = true;
+
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("nome", nome_funcionario);
+        contentValues.put("cargo", cargo);
+
+        String where = "id_funcionario = " + id_funcionario;
+
+        int row = MyDB.update("funcionario", contentValues, where, null);
+
+        if (row < 1){
+            status = false;
+        }
+
+        return status;
+    }
+
 
     public Boolean insertData(String nome_usuario, String senha, String cargo){
         SQLiteDatabase MyDB = this.getWritableDatabase();
