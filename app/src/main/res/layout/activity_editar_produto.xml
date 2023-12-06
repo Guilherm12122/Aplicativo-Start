@@ -7,25 +7,65 @@
     tools:context=".ui.produto.Operations.EditarProduto">
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/codigo_editar_produto"
+        android:hint="Digite o código do produto"
+        style="@style/Edit_Text"
+        android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@id/my_tool_bar_editar_produto"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nome_editar_produto"
+        android:hint="Digite o nome do produto"
+        style="@style/Edit_Text"
+        app:layout_constraintTop_toBottomOf="@id/codigo_editar_produto"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/preco_editar_produto"
+        android:hint="Digite o preço do produto"
+        style="@style/Edit_Text"
+        app:layout_constraintTop_toBottomOf="@id/nome_editar_produto"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_consultar_produto_edicao"
+        style="@style/button_consulta_produto"
+        android:layout_marginTop="40dp"
+        android:text="CONSULTAR"
+        android:layout_width="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="50sp"
-        android:text="Edição de produto"/>
+        app:layout_constraintTop_toBottomOf="@+id/preco_editar_produto"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_atualizar_produto"
+        style="@style/button_consulta_produto"
+        android:layout_marginTop="30dp"
+        android:text="ATUALIZAR"
+        android:layout_width="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consultar_produto_edicao"
+        />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_tool_bar_editar_produto"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        app:title="EDITAR PRODUTO"
-        app:titleMarginStart="115dp"
-        app:titleTextAppearance="@style/title_op"
+        app:title="ATUALIZAR PRODUTO"
         app:titleTextColor="@color/white"
+        app:titleMarginStart="105dp"
+        app:titleTextAppearance="@style/title_op"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/bright_purple"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

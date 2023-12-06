@@ -53,6 +53,23 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor selectProdutoById(int id_produto){
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+        Cursor cursor;
+        String[] campos = { "id_produto", "nome_produto", "preco" };
+        String where = "id_produto=" + id_produto;
+        cursor = MyDB.query("produto", campos, where, null, null, null,
+                null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        MyDB.close();
+        return cursor;
+
+    }
+
     public Boolean updateFuncionario(Integer id_funcionario, String nome_funcionario, String cargo){
 
         boolean status = true;
@@ -67,6 +84,30 @@ public class DBHelper extends SQLiteOpenHelper {
         String where = "id_funcionario = " + id_funcionario;
 
         int row = MyDB.update("funcionario", contentValues, where, null);
+
+        if (row < 1){
+            status = false;
+        }
+
+        return status;
+    }
+
+    public Boolean updateProduto(Integer id_produto, String nome_produto, String preco){
+
+        double preco_double = Double.parseDouble(preco);
+
+        boolean status = true;
+
+        SQLiteDatabase MyDB = this.getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("nome_produto", nome_produto);
+        contentValues.put("preco", preco_double);
+
+        String where = "id_produto = " + id_produto;
+
+        int row = MyDB.update("produto", contentValues, where, null);
 
         if (row < 1){
             status = false;
