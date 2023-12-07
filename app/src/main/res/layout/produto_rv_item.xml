@@ -14,17 +14,32 @@
         android:layout_margin="3dp"
         android:orientation="vertical">
 
-
         <!--text view for our course name-->
         <TextView
-            android:id="@+id/idFuncionarioNome"
+            android:id="@+id/idProdutoNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="Nome do Funcionário"
-            android:textColor="@color/black"
-            />
+            android:text="Nome do Produto"
+            android:textColor="@color/black" />
 
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!--text view for our course tracks-->
+        <TextView
+            android:id="@+id/idProdutoPreco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="Preco do Produto"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,36 +49,17 @@
 
             <!--text view for our course tracks-->
             <TextView
-                android:id="@+id/idFuncionarioCargo"
+                android:id="@+id/idCodigoProduto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="3dp"
-                android:text="Cargo do Funcionário"
-                android:textColor="@color/black" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:id="@+id/idCodigoFuncionario"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="3dp"
-                android:text="Código do funcionário"
+                android:text="Código do Produto"
                 android:textColor="@color/black" />
 
         </LinearLayout>
 
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>

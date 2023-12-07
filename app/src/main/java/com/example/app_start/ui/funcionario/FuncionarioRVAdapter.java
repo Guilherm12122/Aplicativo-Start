@@ -34,9 +34,9 @@ public class FuncionarioRVAdapter extends RecyclerView.Adapter<FuncionarioRVAdap
     @Override
     public void onBindViewHolder(@NonNull FuncionarioRVAdapter.ViewHolder holder, int position) {
         FuncionarioModel funcionarioModel = funcionarioModelArrayList.get(position);
-        holder.funcionario_nome.setText(funcionarioModel.getNome_usuario());
-        holder.funcionario_cargo.setText(funcionarioModel.getCargo());
-
+        holder.funcionario_nome.setText("Nome: " + funcionarioModel.getNome_usuario());
+        holder.funcionario_cargo.setText("Cargo: " + funcionarioModel.getCargo());
+        holder.codigo_funcionario.setText("Código: " + funcionarioModel.getId_usuario().toString());
     }
 
     @Override
@@ -47,11 +47,13 @@ public class FuncionarioRVAdapter extends RecyclerView.Adapter<FuncionarioRVAdap
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView funcionario_nome;
         private TextView funcionario_cargo;
+        private TextView codigo_funcionario;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             funcionario_nome = itemView.findViewById(R.id.idFuncionarioNome);
             funcionario_cargo = itemView.findViewById(R.id.idFuncionarioCargo);
+            codigo_funcionario = itemView.findViewById(R.id.idCodigoFuncionario);
         }
 
     }
